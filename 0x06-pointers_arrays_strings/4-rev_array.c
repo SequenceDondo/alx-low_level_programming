@@ -1,23 +1,23 @@
-nclude "main.h"
-#include <stdio.h>
+#include "main.h"
 /**
- * * reverse_array - Main body function
- * * @a : Pointer pointing toint array
- * * @n: argument of int datatype
- * */
+ * reverse_array - reverses the content of an array
+ * of integers.
+ * @a: array.
+ * @n: number of elements of the array.
+ * Return: no return.
+ */
+
 void reverse_array(int *a, int n)
 {
-		int m = n - 1;
+	int i, j, temp;
 
-			int i = 1;
-
-				for (i = m; i >= 0; i--)
-						{
-									if (m != n - 1)
-												{
-																printf(", ");
-																		}
-											printf("%i", a[m]);
-												}
-					putchar('\n');
+	for (i = 0; i < n - 1; i++)
+	{
+		for (j = i + 1; j > 0; j--)
+		{
+			temp = *(a + j);
+			*(a + j) = *(a + (j - 1));
+			*(a + (j - 1)) = temp;
+		}
+	}
 }
