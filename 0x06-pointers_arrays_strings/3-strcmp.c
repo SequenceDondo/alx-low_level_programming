@@ -1,38 +1,23 @@
-nclude "main.h"
-#include <stdlib.h>
-#include <string.h>
+#include "main.h"
 /**
- * * _strcmp - The main function
- * * @s1 : Pointer pointing to char datatype
- * * @s2 : Pointer pointing to char datatype
- * * Return: Returns an integer value
- * */
+ * _strcmp - compares two strings
+ * @s1: first string.
+ * @s2: second string.
+ * Return: 0 if s1 and s2 are equals,
+ * another number if not.
+ */
+
 int _strcmp(char *s1, char *s2)
 {
-		int n;
+	int i = 0, op = 0;
 
-			int i = 0;
+	while (op == 0)
+	{
+		if ((*(s1 + i) == '\0') && (*(s2 + i) == '\0'))
+			break;
+		op = *(s1 + i) - *(s2 + i);
+		i++;
+	}
 
-				int *val;
-
-					val = malloc(sizeof(int));
-
-						if (strlen(s1) < strlen(s2))
-								{
-											n =  strlen(s2);
-												}
-							else
-									{
-												n = strlen(s1);
-													}
-								while (i < n)
-										{
-													if (s1[i] != s2[i])
-																{
-																				*val = (s1[i] - 48) - (s2[i] - 48);
-																							break;
-																									}
-															i++;
-																}
-									return (*val);
+	return (op);
 }
