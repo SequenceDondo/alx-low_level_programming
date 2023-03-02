@@ -1,23 +1,27 @@
-nclude "main.h"
-#include <string.h>
+#include "main.h"
 /**
- * * _strncat - The main function that concatenates strings and accepts pointers
- * * @dest: Argument pointers pointing to a char datatype
- * * @src : Argument pointer pointing to a char datatype
- * * @n : An integer argument
- * * Return: Returns dest
- * */
+ * _strncat - concatenates two strings,
+ * @dest: destination.
+ * @src: source.
+ * @n: amount of bytes used from src.
+ * Return: the pointer to dest.
+ */
 char *_strncat(char *dest, char *src, int n)
 {
-		int lenght = strlen(dest);
+	int count = 0, count2 = 0;
 
-			int i = 0;
+	while (*(dest + count) != '\0')
+	{
+		count++;
+	}
 
-				while (i < n)
-						{
-									dest[lenght] = src[i];
-											i++;
-													lenght++;
-														}
-					return (dest);
+	while (count2 < n)
+	{
+		*(dest + count) = *(src + count2);
+		if (*(src + count2) == '\0')
+			break;
+		count++;
+		count2++;
+	}
+	return (dest);
 }
