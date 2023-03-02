@@ -1,22 +1,31 @@
-nclude "main.h"
-#include <string.h>
+#include "main.h"
+
 /**
- * * _strcat - the main pointer function
- * * @dest: Argument pointing to a datatype of char
- * * @src: Argument pointer to a datatype of char
- * * Return: char value des
- * */
+ * *_strcat - function commute srtings
+ * @dest: param pointer to a char
+ * @src: param pointer to a char
+ * Return: return value of dest
+ */
+
 char *_strcat(char *dest, char *src)
 {
-		int len = strlen(dest);
-			int lensrc = strlen(src);
-				int i = 0;
+	int i;
+	int j;
 
-					while (i < lensrc)
-							{
-										dest[len] = src[i];
-												i++;
-														len++;
-															}
-						return (dest);
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		j++;
+		i++;
+	}
+
+	dest[i] = '\0';
+	return (dest);
 }
